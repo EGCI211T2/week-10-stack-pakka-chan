@@ -55,6 +55,7 @@ Stack::~Stack(){
         pop();
         n--;
     }
+
    /* NodePtr t = top;
     while(t != NULL){
         NodePtr next = t->get_next();

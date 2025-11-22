@@ -1,10 +1,11 @@
 #include<iostream>
+#include<cstring>
 using namespace std;
 
 #include "stack.h"
 
 int main(int argc, char **argv){
-    Stack s;
+    int i, j;
    
 /*
   Exercise 2
@@ -12,18 +13,30 @@ int main(int argc, char **argv){
 
    */
 
-    /*
+ for(i=1;i<argc;i++){
      for(j=0;j<strlen(argv[i]);j++){
-       // Use stack to help with the parentheses
+        Stack s; //Change node to char-->****
+        if(argv[i][j]=='[' || argv[i][j]=='{' || argv[i][j]=='(' ){
+                s.push(argv[i][j]);
+        }
+        else if(argv[i][j]==']' || argv[i][j]=='}' || argv[i][j]==')') {
+              char x=s.pop();
+              if(x==0){
+                cout << "Incorrect" << endl;
+                break;
+              }
+              /*How to check????*/
+              if((argv[i][j]==']' && x != argv[i][j]=='[') || 
+              (argv[i][j]=='}' && x != argv[i][j]=='{') || 
+              (argv[i][j]==')' && x != argv[i][j]=='(')){
+                cout<<"Incorrect"<<endl;
+                break;
+              }
+          }
+
+        }
+      }
+      return 0;
+    }
 
 
-
-
-
-  }
-
-  */
-
-
-   return 0;
-}
