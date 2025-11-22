@@ -39,7 +39,7 @@ int Stack::pop(){
 	//be careful of the empty stack!!!
     }
     cout<<"Empty stack"<<endl;
-    return NULL;
+    return 0;
 }
 
 Stack::Stack(){
